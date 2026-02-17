@@ -210,12 +210,7 @@ function submitGuess() {
     return;
   }
   const guess = board[row].join('').toLowerCase();
-  const isFiveLetters = /^[a-z]{5}$/.test(guess);
-  if (!isFiveLetters) {
-    showMessage('Please enter a valid 5-letter word');
-    return;
-  }
-
+  // Accept any 5-letter input from the in-game keyboard.
   const score = scoreGuess(guess, secret);
   for (let i = 0; i < COLS; i += 1) {
     const tile = document.getElementById(`tile-${row}-${i}`);
