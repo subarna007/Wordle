@@ -210,11 +210,7 @@ function submitGuess() {
     return;
   }
   const guess = board[row].join('').toLowerCase();
-  if (!ALLOWED_WORDS.includes(guess)) {
-    showMessage('Word not in list');
-    return;
-  }
-
+  // Accept any 5-letter input from the in-game keyboard.
   const score = scoreGuess(guess, secret);
   for (let i = 0; i < COLS; i += 1) {
     const tile = document.getElementById(`tile-${row}-${i}`);
