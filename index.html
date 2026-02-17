@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Simplest Portfolio Design | AsmrProg</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wordle Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <div id="login-modal" style="display:flex;">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <h2>Enter Your Name</h2>
+      <input id="player-name-input" type="text" placeholder="e.g. Alex" maxlength="16" />
+      <button id="login-btn" class="btn-primary">Start Playing</button>
+      <button id="back-btn" class="btn-primary" style="display:none;">Back</button>
+    </div>
+  </div>
 
-    <div class="container">
-        <div class="glass-container">
-            <nav class="navbar">
-                <div class="logo"><a href="#">Portfolio</a></div>
-                <ul class="nav-links">
-                    <li class="nav-link"><a href="#">Home</a></li>
-                    <li class="nav-link"><a href="#">Services</a></li>
-                    <li class="nav-link"><a href="#">About</a></li>
-                </ul>
-            </nav>
-            <div class="content">
-                <div class="main">
-                    <h2>Hello! 👋,<br>Everyone</h2>
-                    <p>
-                        Portfolio design website under 10minutes
-                    </p>
-                    <button>Get Started</button>
-                </div>
-                <div class="image-wrapper">
-                    <img src="images/Portfolio.png">
-                    <div class="attrebute">
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div id="topbar">
+    <div class="left-topbar">
+      <div class="title">WORDLE</div>
+      <div class="user-info">
+        <span id="current-player-display">PLAYER</span>
+        <button id="switch-user-btn" class="switch-like" title="Switch User">Switch User</button>
+      </div>
     </div>
 
-</body>
+    <div class="stats">
+      <div class="stat"><span class="num" id="played">0</span>PLAYED</div>
+      <div class="stat"><span class="num" id="won">0</span>WON</div>
+      <div class="stat"><span class="num" id="streak">0</span>STREAK</div>
+    </div>
 
+    <button id="new-game-btn">New Game</button>
+  </div>
+
+  <div id="main-content">
+    <div id="game-container">
+      <div id="message"></div>
+      <div id="board"></div>
+      <div id="keyboard">
+        <div class="keyboard-row" id="krow1"></div>
+        <div class="keyboard-row" id="krow2"></div>
+        <div class="keyboard-row" id="krow3"></div>
+      </div>
+    </div>
+
+    <aside id="leaderboard" aria-label="Best streaks leaderboard">
+      <h3>🏆 BEST STREAKS</h3>
+      <div id="leader-list"></div>
+    </aside>
+  </div>
+
+  <script src="words.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
